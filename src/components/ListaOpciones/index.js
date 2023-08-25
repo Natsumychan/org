@@ -6,8 +6,8 @@ const ListaOpciones= () =>{
  ]
 
  return <div className="lista-opciones">
-  <label for="">Equipos</label>
-  <select name="" id="">
+  <label htmlFor="equipos">Equipos</label>
+  <select name="" id="equipos">
    { equipos.map( (equipo, index) => <option key={index}> {equipo} </option>
     ) }
   </select>

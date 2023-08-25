@@ -1,7 +1,7 @@
 import "./Botton.css"
 
-const Boton= () => {
- return "hola"
+const Boton= (props) => {
+ return <button className="boton">{props.texto}</button>
 }
 
 export default Boton
