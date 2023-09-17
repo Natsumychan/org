@@ -1,4 +1,5 @@
 import "./equipo.css"
+import Colaborador from "../Colaborador"
 
 const Equipo= (props) =>{
 
@@ -8,7 +9,16 @@ const Equipo= (props) =>{
 
  return <section className="equipo" style={estiloFondo}>
   <h3 style={estilotitulo}>{props.equipo}</h3>
-  <div className="colaboradores"></div>
+  <div className="colaboradores">
+   <Colaborador/>
+   <Colaborador/>
+   <Colaborador/>
+   <Colaborador/>
+   <Colaborador/>
+   <Colaborador/>
+   <Colaborador/>
+   <Colaborador/>
+  </div>
  </section>
 }
 
