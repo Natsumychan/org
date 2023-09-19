@@ -75,7 +75,7 @@ function App() {
            equipo={equipo.titulo} 
            colorPrimario={equipo.colorPrimario} colorSecundario={equipo.colorSecundario} 
            key={index}
-           colaboradores={colaboradores} 
+           colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo) } 
            />
          )
       }
