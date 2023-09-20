@@ -4,6 +4,8 @@ import Header from './components/Header/Header'
 import Formulario from './components/Formulario/Formulario';
 import MiOrg from "./components/Miorg"
 import Equipo from "./components/Equipo";
+import Footer from "./components/Footer";
+
 
 function App() {
   const[mostrarFormulario, actualizarMostrar] = useState(true)
@@ -79,6 +81,7 @@ function App() {
            />
          )
       }
+      <Footer/>
     </div>
   );
 }
