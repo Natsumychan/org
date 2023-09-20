@@ -16,7 +16,7 @@ const Equipo= (props) =>{
      <h3 style={estiloTitulo}>{props.equipo}</h3>
      <div className="colaboradores">
       {
-       colaboradores.map( (colaborador, index) => <Colaborador    datos={colaborador} key={index}/>)
+       colaboradores.map( (colaborador, index) => <Colaborador    datos={colaborador} key={index} colorPrimario={props.colorPrimario}/>)
       }
      </div>
      </section>
