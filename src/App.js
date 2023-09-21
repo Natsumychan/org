@@ -19,6 +19,11 @@ function App() {
     setColaboradores([...colaboradores, colaborador])
   }
 
+  //Eliminar colaborador
+  const eliminarColaborador= () =>{
+    
+  }
+
   //Lista de equipos
   const equipos= [
     {
@@ -69,7 +74,6 @@ function App() {
         />
       }
       
-      
       <MiOrg cambiarMostrar={cambiarMostrar}/>
       {
         equipos.map( (equipo, index) =>
@@ -78,6 +82,7 @@ function App() {
            colorPrimario={equipo.colorPrimario} colorSecundario={equipo.colorSecundario} 
            key={index}
            colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo) } 
+           eliminarColaborador={eliminarColaborador}
            />
          )
       }

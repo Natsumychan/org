@@ -1,11 +1,14 @@
 .colaborador{
  width: 280px;
  margin-bottom: 24px;
+ position:relative
 }
 
 .colaborador .encabezado{
  background-color: #f0f0f0;
  border-radius: 10px 10px 0 0;
+ display:flex;
+ justify-content: center;
 }
 
 .colaborador img{
@@ -13,6 +16,12 @@
  position:relative;
  bottom: -50px;
  border-radius: 50%;
+}
+
+.eliminar{
+ position: absolute;
+ right: 10px;
+ top: 10px;
 }
 
 .colaborador .info{

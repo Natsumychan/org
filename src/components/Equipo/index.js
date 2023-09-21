@@ -3,7 +3,7 @@ import Colaborador from "../Colaborador"
 
 const Equipo= (props) =>{
 
- const {colaboradores} = props
+ const {colaboradores, eliminarColaborador} = props
  
  const estiloFondo= {backgroundColor: props.colorSecundario}
 
@@ -16,7 +16,7 @@ const Equipo= (props) =>{
      <h3 style={estiloTitulo}>{props.equipo}</h3>
      <div className="colaboradores">
       {
-       colaboradores.map( (colaborador, index) => <Colaborador    datos={colaborador} key={index} colorPrimario={props.colorPrimario}/>)
+       colaboradores.map( (colaborador, index) => <Colaborador    datos={colaborador} key={index} colorPrimario={props.colorPrimario} eliminarColaborador={eliminarColaborador}/>)
       }
      </div>
      </section>
