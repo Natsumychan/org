@@ -1,14 +1,14 @@
 import "./equipo.css"
 import Colaborador from "../Colaborador"
-// import hexToRgba from "hex-to-rgba"
-//hexToRgba(props.colorPrimario,0.6
-const Equipo= (props) =>{
+import hexToRgba from "hex-to-rgba"
 
+const Equipo= (props) =>{
+ const {id, titulo, colorPrimario, colorSecundario }=props.datos
  const {colaboradores, eliminarColaborador, actualizarColor} = props
  
- const estiloFondo= {backgroundColor: props.colorSecundario}
+ const estiloFondo= {backgroundColor: hexToRgba(colorPrimario,0.4)}
 
- const estiloTitulo= {borderBottom: `4px solid ${props.colorPrimario}`}
+ const estiloTitulo= {borderBottom: `4px solid ${colorPrimario}`}
 
  return <>
   {
@@ -17,15 +17,15 @@ const Equipo= (props) =>{
       <input
         type="color"
         className="input-color"
-        value={props.colorPrimario}
+        value={colorPrimario}
         onChange={(event)=>{
-          actualizarColor(event.target.value, props.equipo)
+          actualizarColor(event.target.value, id)
         }}
       />
-     <h3 style={estiloTitulo}>{props.equipo}</h3>
+     <h3 style={estiloTitulo}>{titulo}</h3>
      <div className="colaboradores">
       {
-       colaboradores.map( (colaborador, index) => <Colaborador    datos={colaborador} key={index} colorPrimario={props.colorPrimario} eliminarColaborador={eliminarColaborador}
+       colaboradores.map( (colaborador, index) => <Colaborador    datos={colaborador} key={index} colorPrimario={colorPrimario} eliminarColaborador={eliminarColaborador}
        actualizarColor={actualizarColor}
        />)
       }
