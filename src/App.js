@@ -85,6 +85,12 @@ function App() {
     setEquipos(equiposActualizados)
   }
 
+  //Crear equipo
+  const crearEquipo= (nuevoEquipo) =>{
+    console.log(nuevoEquipo)
+    setEquipos([...equipos, {...nuevoEquipo, id: uuidv4()}])
+  }
+
   return (
     <div>
       <Header/>
@@ -93,6 +99,7 @@ function App() {
         mostrarFormulario && <Formulario 
         equipos={equipos.map((equipo) => equipo.titulo)}
         registrarColaborador={registrarColaborador}
+        crearEquipo={crearEquipo}
         />
       }
       
