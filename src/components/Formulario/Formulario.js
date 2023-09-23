@@ -23,7 +23,8 @@ const Formulario = (props) =>{
    nombre,
    puesto,
    foto,
-   equipo
+   equipo,
+   fav: false
   }
   registrarColaborador(datosAEnviar)
  }

@@ -10,7 +10,24 @@ import Footer from "./components/Footer";
 
 function App() {
   const[mostrarFormulario, actualizarMostrar] = useState(true)
-  const [colaboradores, setColaboradores] = useState([])
+  const [colaboradores, setColaboradores] = useState([
+    {
+      id: uuidv4(),
+      equipo:"Programación",
+      foto:"https://github.com/JeanmarieAluraLatam.png",
+      nombre: "Jeanmarie",
+      puesto:"Instructora",
+      fav:true
+    },
+    {
+      id: uuidv4(),
+      equipo:"Front End",
+      foto:"https://github.com/harlandlohora.png",
+      nombre: "Harland Lohora",
+      puesto:"Instructor",
+      fav:false
+    }
+  ])
   const[equipos, setEquipos]= useState([
     {
       id: uuidv4(),
@@ -91,6 +108,18 @@ function App() {
     setEquipos([...equipos, {...nuevoEquipo, id: uuidv4()}])
   }
 
+  //oprimir like
+  const like= (id)=>{
+    console.log("like", id)
+    const colaboradoresActualizados = colaboradores.map((colaborador) =>{
+      if(colaborador.id === id){
+        colaborador.fav = !colaborador.fav
+      }
+      return colaborador
+    })
+    setColaboradores(colaboradoresActualizados)
+  }
+
   return (
     <div>
       <Header/>
@@ -112,6 +141,7 @@ function App() {
            colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo) } 
            eliminarColaborador={eliminarColaborador}
            actualizarColor={actualizarColor}
+           like={like}
            />
          )
       }
